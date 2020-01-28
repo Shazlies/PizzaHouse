@@ -1,0 +1,33 @@
+table, td, th {
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  height: 50px;
+}
+td {
+  height: 30px;
+  text-align: center;
+}
+.tableStyle{
+  width: 100%;
+}
+
+.ex1 {
+  padding-top:1em;
+//    line-height: 1em;
+
+  }
+  .ex2 {
+    float: right;   
+  }
+  .price{
+    padding-left:2em;
+  }
+  .price2{
+    padding-left:4em;
+  }

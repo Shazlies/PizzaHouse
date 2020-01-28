@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pizza Menu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<table >
+
+  <tr>
+    <th>Pizza</th>
+    <th colspan="2">Price</th>
+    <th colspan="2">Amount</th>
+  </tr>
+
+
+
+  <tr *ngFor="let pizza of pizzas">
+    <td >
+        {{pizza.name}}
+    </td>
+    <td colspan="2">
+        {{pizza.price | currency:'€'}}
+    </td>
+    <td colspan="2">
+        <ion-button size="small" small class="ex2" (click)="increment(pizza)">
+            <ion-icon slot="icon-only" name="add"></ion-icon>
+          </ion-button>
+
+          <span class="ex2 ex1" >{{pizza.amount}}</span> 
+          <ion-button size="small" small class="ex2" (click)="decrement(pizza)">
+              <ion-icon slot="icon-only" name="remove"></ion-icon>
+            </ion-button>
+
+    </td>
+  </tr>
+
+</table>
+
+
+  
+<br>
+<br>
+
+   
+      
+
+
+<div>
+  
+  
+  <span class="price2"> Total</span>
+  <span class="price2"> {{totalPrice()| currency:'€' }}</span>
+    
+
+</div>
+<br>
+<br>
+<ion-button expand="full" (click)="submit()">
+    <ion-icon slot="start" name="cart" ></ion-icon>
+    Add to Cart
+  </ion-button>
+  <ion-button expand="full" (click)="reset()">
+      <ion-icon slot="start" name="undo" ></ion-icon>
+      Reset
+    </ion-button>
+</ion-content>

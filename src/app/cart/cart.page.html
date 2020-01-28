@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="!pizzaOrders && !drinkOrders">No Items</div>
+    <table *ngIf="pizzaOrders">
+
+        <tr>
+          <th>Pizza</th>
+          <th colspan="2">Amount</th>
+          <th colspan="2">Price</th>
+          <th colspan="2">Total</th>
+        </tr>
+      
+      
+      
+        <tr *ngFor="let order of pizzaOrders">
+          <td >
+              {{order.name}}
+          </td>
+          <td colspan="2">
+              {{order.amount}}
+          </td>
+          <td colspan="2">
+              {{order.price | currency:'€'}}
+          </td>
+          <td>
+              {{order.amount * order.price | currency:'€'}}
+          </td>
+        </tr>
+      
+      </table>
+
+<br>
+      <table *ngIf="drinkOrders">
+
+          <tr>
+            <th>Drink</th>
+            <th colspan="2">Amount</th>
+            <th colspan="2">Price</th>
+            <th colspan="2">Total</th>
+          </tr>
+        
+        
+        
+          <tr *ngFor="let order of drinkOrders">
+            <td >
+                {{order.name}}
+            </td>
+            <td colspan="2">
+                {{order.amount}}
+            </td>
+            <td colspan="2">
+                {{order.price | currency:'€'}}
+            </td>
+            <td>
+                {{order.amount * order.price | currency:'€'}}
+            </td>
+          </tr>
+        
+        </table>
+        <br>
+        <div *ngIf="pizzaOrders || drinkOrders">
+  
+  
+            <span class="price2"> Total</span>
+            <span class="price2"> {{totalPrice()| currency:'€' }}</span>
+              
+          
+          </div>
+</ion-content>
